@@ -39,6 +39,15 @@ def dead_zone(controller_input, dead_zone):
     else:
         return ((-controller_input-dead_zone)/(dead_zone-1))
 
+def inverse_dead_zone(motor_output, dead_zone):
+    """This is the inverted dead zone code which is important for Talons."""
+    if abs(motor_output) < .00001: #floating point rounding error workaround.
+        return 0
+    elif motor_output > 0:
+        return (motor_output*(1-dead_zone))+dead_zone
+    else:
+        return (-motor_output*(dead_zone-1))-dead_zone
+
 class DriveMotor(wpilib.Talon):
     """A motor controller that overcomes static friction."""
     def set(self, speed, syncGroup=0):

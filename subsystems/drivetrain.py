@@ -3,8 +3,8 @@ import math
 
 import wpilib
 from wpilib.command import Subsystem
-from commands.manual_commands.mecanum_drive_with_joystick import MecanumDriveWithJoystick
-from drive_control import *
+from commands.manual.mecanum_drive_with_joystick import MecanumDriveWithJoystick
+from utilities.drive_control import *
 
 class Drivetrain(Subsystem):
     '''Class drivetrain uses a few Talons to run a 'bot.
@@ -31,7 +31,7 @@ class Drivetrain(Subsystem):
         self.setDefaultCommand(MecanumDriveWithJoystick(self.robot))
 
     def log(self):
-        wpilib.SmartDashboard.putNumber("Gyro", self.gyro.getYaw())
+        pass
 
     def driveJoystick(self, joystick):
         precision = True
