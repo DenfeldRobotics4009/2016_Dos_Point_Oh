@@ -61,4 +61,4 @@ def drive_control(controller_input, trigger, button):
 def twist_control(controller_input, trigger, button):
     """Final spin thing that's used by the drivetrain class."""
 
-    return precision_mode(exponential_scaling(exponential_scaling(controller_input, 0.5)*0.5, 2.3), trigger, button)
+    return precision_mode(exponential_scaling(exponential_scaling(dead_zone(controller_input, 0.1)*0.5, 2.3), trigger, button)
