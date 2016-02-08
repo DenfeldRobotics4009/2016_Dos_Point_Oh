@@ -11,6 +11,7 @@ from utilities.settings import Settings
 from macros.play_macro import PlayMacro
 from macros.record_macro import RecordMacro
 
+from commands.semiauto.super_strafe_entertainment_system import SuperStrafeEntertainmentSystem
 class OI:
     """Button mapping goes here."""
 
@@ -36,16 +37,6 @@ class OI:
         eleven = JoystickButton(self.stick, 11)
         twelve = JoystickButton(self.stick, 12)
 
-        #Goes from front to back. outer_base is the outer ring of buttons on
-        #the base, inner_base is the inner ring of buttons on the base.
-        #-----------------------------------------------------------------------
-        outer_base_one = JoystickButton(self.stick, 7)
-        inner_base_one = JoystickButton(self.stick, 8)
-        outer_base_two = JoystickButton(self.stick, 9)
-        inner_base_two = JoystickButton(self.stick, 10)
-        outer_base_three = JoystickButton(self.stick, 11)
-        inner_base_three = JoystickButton(self.stick, 12)
-
         #Hat switch POV stuff.
         #-----------------------------------------------------------------------
         pov_north = POVButton(self.stick, 0)
@@ -56,6 +47,11 @@ class OI:
         pov_southwest = POVButton(self.stick, 225)
         pov_west = POVButton(self.stick, 270)
         pov_northwest = POVButton(self.stick, 315)
+
+        pov_south.whenPressed(SuperStrafeEntertainmentSystem(robot, SuperStrafeEntertainmentSystem.kBack))
+        pov_north.whenPressed(SuperStrafeEntertainmentSystem(robot, SuperStrafeEntertainmentSystem.kForward))
+        pov_east.whenPressed(SuperStrafeEntertainmentSystem(robot, SuperStrafeEntertainmentSystem.kRight))
+        pov_west.whenPressed(SuperStrafeEntertainmentSystem(robot, SuperStrafeEntertainmentSystem.kLeft))
 
     def getStick(self):
         """Drive joystick."""
