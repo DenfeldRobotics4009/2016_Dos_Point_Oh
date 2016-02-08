@@ -31,7 +31,7 @@ class Drivetrain(Subsystem):
         self.setDefaultCommand(MecanumDriveWithJoystick(self.robot))
 
     def log(self):
-        pass
+        wpilib.SmartDashboard.putBoolean("DriveInit", True)
 
     def driveJoystick(self, joystick):
         precision = True
