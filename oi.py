@@ -25,11 +25,16 @@ class OI:
         #-----------------------------------------------------------------------
         trigger = JoystickButton(self.stick, 1)
         thumb = JoystickButton(self.stick, 2)
-        bottom_left = JoystickButton(self.stick, 3)
-        bottom_right = JoystickButton(self.stick, 4)
-        top_left = JoystickButton(self.stick, 5)
-        top_right = JoystickButton(self.stick, 6)
-
+        three = JoystickButton(self.stick, 3)
+        four = JoystickButton(self.stick, 4)
+        five = JoystickButton(self.stick, 5)
+        six  = JoystickButton(self.stick, 6)
+        seven = JoystickButton(self.stick, 7)
+        eight = JoystickButton(self.stick, 8)
+        nine = JoystickButton(self.stick, 9)
+        ten = JoystickButton(self.stick, 10)
+        eleven = JoystickButton(self.stick, 11)
+        twelve = JoystickButton(self.stick, 12)
 
         #Goes from front to back. outer_base is the outer ring of buttons on
         #the base, inner_base is the inner ring of buttons on the base.
