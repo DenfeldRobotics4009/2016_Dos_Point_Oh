@@ -15,7 +15,7 @@ from subsystems.drivetrain import Drivetrain
 #Import our button mapping:
 from oi import OI
 
-class Mantis(wpilib.SampleRobot):
+class DosPointOh(wpilib.SampleRobot):
     """Fluffy ears to scratch, lost his tail, cute little paws, likes to play fetch."""
 
     def robotInit(self):
@@ -70,4 +70,4 @@ class Mantis(wpilib.SampleRobot):
         self.drivetrain.log()
 
 if __name__ == "__main__":
-    wpilib.run(Mantis)
+    wpilib.run(DosPointOh)
