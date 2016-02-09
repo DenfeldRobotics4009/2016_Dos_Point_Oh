@@ -39,7 +39,7 @@ def exponential_scaling(base, exponent):
         return -(abs(base)**exponent)
 
 def dead_zone(controller_input, dead_zone):
-    """Old-style dead zone scaling. Will likely be removed."""
+    """Old-style dead zone scaling, required for similar drive behaviour."""
 
     if controller_input <= dead_zone and controller_input >= -dead_zone:
         return 0
@@ -54,6 +54,6 @@ class DriveMotor(wpilib.Talon):
         super().set(inverse_dead_zone(speed, .1),syncGroup=syncGroup)
 
 def drive_control(controller_input, trigger, button):
-    """Final y-axis thing that's used by the drivetrain class."""
+    """Final calculation that's used by the drivetrain class."""
 
-    return precision_mode(exponential_scaling(dead_zone(controller_input, 0.1), 2.3), trigger, button)
+    return precision_mode(exponential_scaling(dead_zone(controller_input, 0.15), 2.3), trigger, button)

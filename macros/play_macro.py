@@ -48,7 +48,8 @@ class PlayMacro(Command):
             #self.robot.subsystem.manualCommand(float(line["Row_Name"]))
 
             self.robot.drivetrain.driveManual(float(line["Drive_X"]),
-                                            float(line["Drive_Y"]))
+                                            float(line["Drive_Y"]),
+                                            float(line["Drive_Z"]))
 
             if self.isTimedOut() or self.done_yet:
                 break

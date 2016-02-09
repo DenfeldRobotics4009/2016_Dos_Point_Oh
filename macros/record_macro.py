@@ -39,6 +39,7 @@ class RecordMacro(Command):
             #"Row_Name": self.robot.subsystem.getValue
             "Drive_X": self.robot.drivetrain.x,
             "Drive_Y": self.robot.drivetrain.y,
+            "Drive_Z": self.robot.drivetrain.z,
 
             #this is needed to make sure everything runs at the right time, v. important:
             "Time": wpilib.Timer.getFPGATimestamp() - self.initTime}) #get the time as the row is written
