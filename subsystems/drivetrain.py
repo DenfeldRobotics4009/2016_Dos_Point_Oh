@@ -37,7 +37,7 @@ class Drivetrain(Subsystem):
         precision = True
         x = drive_control(joystick.getX()*2, False, False)
         y = drive_control(joystick.getY(), False, False)
-        z = drive_control(joystick.getRawAxis(3)*.75, False, False)
+        z = precision_mode(dead_zone(joystick.getRawAxis(3)*.75, .1), False, False)
         if x>1:
             x=1
         elif x<-1:
